@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SosFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_sos"
+            android:text="@string/emergency_msg"
+            android:textSize="30dp"
+            android:textColor="@android:color/black"
+            android:padding="8dp"
+            android:fontFamily="@font/montserrat"
+            android:textAlignment="center"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_sos"
+            android:src="@drawable/btn_sos"
+            android:background="@android:color/transparent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_below="@+id/text_sos"
+            android:layout_marginTop="50dp"/>
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>

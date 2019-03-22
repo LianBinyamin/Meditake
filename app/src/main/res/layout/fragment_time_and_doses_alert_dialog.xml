@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimeAndDosesAlertDialogFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pick_time_msg"
+            android:text="@string/pick_reminder_time"
+            android:textColor="@android:color/black"
+            android:textSize="18dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"/>
+
+        <TimePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/time_picker"
+            android:timePickerMode="spinner"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/pick_time_msg"
+            android:layout_marginTop="8dp"></TimePicker>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/set_amount_message"
+            android:text="@string/set_dose_message"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/time_picker"
+            android:textColor="@android:color/black"
+            android:textSize="18dp"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/minus_btn_doses"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/set_amount_message"
+            android:layout_toStartOf="@+id/edit_amount_dose"
+            android:background="@drawable/minus_btn" />
+
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_amount_dose"
+            android:layout_below="@+id/set_amount_message"
+            android:layout_centerHorizontal="true"
+            android:text="@string/number_doses_edit_text"
+            android:textSize="25dp"
+            android:textAlignment="center"/>
+
+        <Button
+            android:id="@+id/plus_btn_doses"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/edit_amount_dose"
+            android:background="@drawable/plus_btn"
+            android:layout_below="@+id/set_amount_message"/>
+
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>

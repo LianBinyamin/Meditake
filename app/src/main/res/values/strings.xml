@@ -1,0 +1,132 @@
+<resources>
+    <string name="app_name">MediTake</string>
+    <string name="title_home">Home</string>
+    <string name="title_med">Medications</string>
+    <string name="schedule_title">Schedule</string>
+    <string name="specific_days_of_week_rbtn">specific days of week</string>
+    <string name="every_day_rbtn">every day</string>
+    <string name="days_text">Days:</string>
+    <string name="days_final_amount">Days: %d</string>
+    <string name="number_of_days_rbtn">number of days</string>
+    <string name="continuous_rbtn">continuous</string>
+    <string name="duration_text">Duration:</string>
+    <string name="start_date_hint">tap to choose date</string>
+    <string name="start_date_text">Start date:</string>
+    <string name="set_number_of_days_title_dialog">Set number of days (from start date)</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="number_days_edit_text">%d</string>
+    <string name="pick_days_dialog_title">Pick Days</string>
+
+    <string-array name="reminder_times_array">
+        <item>Once a day</item>
+        <item>Twice a day</item>
+        <item>3 times a day</item>
+    </string-array>
+
+    <string-array name="days_array">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
+    <string-array name="phone_array">
+        <item>050</item>
+        <item>052</item>
+        <item>054</item>
+        <item>058</item>
+    </string-array>
+
+    <string name="cancel">CANCEL</string>
+    <string name="set">Set</string>
+    <string name="submit">Submit</string>
+    <string name="take_dose">Take %.2f</string>
+    <string name="take_dose_int">Take %d</string>
+    <string name="set_time_dose_title_dialog">Set Quantity</string>
+    <string name="number_doses_edit_text">%.2f</string>
+    <string name="set_dose_message">Set quantity (number of doses) to be taken at the time you chose</string>
+    <string name="dosage_amount_edit_text">%.2f</string>
+    <string name="dosage_amount_picked">%.2f mg</string>
+    <string name="dosage_amount_picked_int">%d mg</string>
+    <string name="amount_meds_remaining">When I have %d meds remaining</string>
+    <string name="refill_reminder_text">Refill reminder</string>
+    <string name="btn_more_options">More Options</string>
+    <string name="btn_done">Done</string>
+    <string name="what_time_refill_text">What time?</string>
+    <string name="enter_amount_meds_msg">Enter the amount of meds you currently have to get a refill reminder</string>
+    <string name="prescription_refill_title">Prescription Refill</string>
+    <string name="after_food">after food</string>
+    <string name="with_food">with food</string>
+    <string name="before_food">before food</string>
+    <string name="no_instructions">no instructions</string>
+    <string name="instructions_title">Instructions</string>
+    <string name="tap_to_set">tap to set</string>
+    <string name="medication_dose">Medication dose:</string>
+    <string name="dosage_title">Dosage</string>
+    <string name="refill_reminder_msg">How many meds do you want remaining before you get a refill reminder?</string>
+    <string name="type_here_hint">Type here</string>
+    <string name="refill_reminder_dialog_title">Refill reminder</string>
+    <string name="amount_meds_edit_text_dialog">%d</string>
+    <string name="invalid_input">Invalid input</string>
+    <string name="pick_time">Pick time</string>
+    <string name="done_dialog_msg">Do you need to add another medication?</string>
+    <string name="yes">Yes</string>
+    <string name="no">Nope, I\'m all set</string>
+    <string name="done_dialog_title">What\'s next?</string>
+    <string name="dosage_dialog_title">Set dosage (mg)</string>
+    <string name="exit_dialog_title">Exit</string>
+    <string name="no_dialog">No</string>
+    <string name="exit_dialog_msg">Are you sure you want to exit?\nChanges won\'t be saved.</string>
+    <string name="doses_text_recycler">%.2f dose(s)</string>
+    <string name="mg_text_recycler">%.2f mg</string>
+    <string name="reminders_text_recycler">%d reminder(s)</string>
+    <string name="delete_title">Delete Medication</string>
+    <string name="delete_dialog_msg">Are you sure you want to delete medication and its reminders?</string>
+    <string name="name_medifriend">%s</string>
+    <string name="medifriend_description">A MediFriend is someone to help you remember to take your
+                            medications in case you forget.\nJust add their name and phone number.</string>
+    <string name="medifriend_title">MediFriend</string>
+    <string name="add_medifriend_dialog_title">Add Medifriend</string>
+    <string name="add_medifriend_dialog_msg">Insert name and phone number of your medifriend</string>
+    <string name="insert">Insert</string>
+    <string name="toast_error_phone">Phone is not valid</string>
+    <string name="toast_error_medifriend">Please fill name and phone number</string>
+    <string name="prescriptions_nav">Prescriptions</string>
+    <string name="medifriend_nav">Medifriend</string>
+    <string name="medifriend_permission_msg">For using Medifriend service, you need to permit SMS service.
+                            \nYou can do it manually through Meditake settings app.</string>
+    <string name="toast_medifriend_permission">you need to permit sms service</string>
+    <string name="toast_remove_medifriend">first remove the existed medifriend</string>
+    <string name="medication_err_toast">Please Pick Medication From List</string>
+    <string name="medication_in_list_toast">You already added this medication</string>
+    <string name="notification_title">Medication Alert</string>
+    <string name="notification_msg">It\'s time to take %.2f pill(s) of %s</string>
+    <string name="snooze">Snooze</string>
+    <string name="take_action_btn">Take</string>
+    <string name="fill_all_details_toast">Please Fill In All Details</string>
+    <string name="emergency_msg">For emergency, press this button. It will call your medifriend</string>
+    <string name="sos_nav">SOS</string>
+    <string name="prescription_nav">Pres</string>
+    <string name="medications_nav">Meds</string>
+    <string name="sms_body">This is a message from Meditake App.\nYou should check that everything is ok!</string>
+    <string name="today_reminders_msg">No reminders for today! click the \"+\" button to add medications</string>
+    <string name="home_fragment_title">Today\'s Medications:</string>
+    <string name="medication_name">Medication Name</string>
+    <string name="type_brand_name_hint">type brand name</string>
+    <string name="reminder_times_title">Reminder Times</string>
+    <string name="tap_to_pick_time">Tap to pick time</string>
+    <string name="amount_of_meds_edit_text">Amount of meds</string>
+    <string name="get_started_btn">Get Started</string>
+    <string name="medifriend_name_hint">Name</string>
+    <string name="dad">DAD</string>
+    <string name="your_medications_title">Your Medications:</string>
+    <string name="all_medications_msg">You Don\'t have medications yet.\nClick the \"+\" button to add medications</string>
+    <string name="prescriptions_fragment_title">Refill Prescriptions:</string>
+    <string name="pick_reminder_time">Pick reminder time:</string>
+    <string name="acamol">Acamol</string>
+    <string name="prescriptions_msg">No prescription reminders</string>
+</resources>

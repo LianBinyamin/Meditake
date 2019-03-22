@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".AddMedicationActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:id="@+id/medication_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/medication_name"
+                android:textSize="22dp"
+                android:textColor="@color/myblue"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/med_name_autocomp"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/medication_name"
+                android:hint="@string/type_brand_name_hint"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"/>
+
+            <Button
+                android:id="@+id/submit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/med_name_autocomp"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/submit"
+                android:textColor="@android:color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relative_dosage"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/rectangle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dosage_title"
+                android:text="@string/dosage_title"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/myblue"
+                android:textSize="22dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/medication_dose_text"
+                android:layout_below="@+id/dosage_title"
+                android:layout_marginTop="8dp"
+                android:text="@string/medication_dose"
+                android:textSize="18dp"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/set_dosage_text"
+                android:layout_toEndOf="@+id/medication_dose_text"
+                android:layout_alignBaseline="@+id/medication_dose_text"
+                android:layout_marginStart="5dp"
+                android:text="@string/tap_to_set"
+                android:textSize="18dp"
+                android:textColor="@android:color/holo_blue_light"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/relative_reminder_times"
+            android:background="@drawable/rectangle"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:id="@+id/reminder_times_headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/reminder_times_title"
+                android:textColor="@color/myblue"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner_reminder_times"
+                android:layout_below="@id/reminder_times_headline"
+                android:layout_centerHorizontal="true"
+                android:theme="@style/ThemeOverlay.AppCompat.Light"
+                android:spinnerMode="dropdown">
+            </Spinner>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pickTime"
+                android:clickable="true"
+                android:text="@string/tap_to_pick_time"
+                android:layout_below="@id/spinner_reminder_times"
+                android:textSize="20dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/holo_blue_light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/number_of_doses_textview"
+                android:text="@string/take_dose"
+                android:clickable="true"
+                android:layout_below="@id/spinner_reminder_times"
+                android:layout_alignBaseline="@+id/pickTime"
+                android:layout_alignParentEnd="true"
+                android:textSize="20dp"
+                android:textColor="@android:color/holo_blue_light"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pickTime2"
+                android:clickable="true"
+                android:text="@string/tap_to_pick_time"
+                android:layout_below="@id/pickTime"
+                android:textSize="20dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/holo_blue_light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/number_of_doses_textview2"
+                android:text="@string/take_dose"
+                android:clickable="true"
+                android:layout_below="@id/spinner_reminder_times"
+                android:layout_alignBaseline="@+id/pickTime2"
+                android:layout_alignParentEnd="true"
+                android:textSize="20dp"
+                android:textColor="@android:color/holo_blue_light"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pickTime3"
+                android:clickable="true"
+                android:text="@string/tap_to_pick_time"
+                android:layout_below="@id/pickTime2"
+                android:textSize="20dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@android:color/holo_blue_light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/number_of_doses_textview3"
+                android:text="@string/take_dose"
+                android:clickable="true"
+                android:layout_below="@id/spinner_reminder_times"
+                android:layout_alignBaseline="@+id/pickTime3"
+                android:layout_alignParentEnd="true"
+                android:textSize="20dp"
+                android:textColor="@android:color/holo_blue_light"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relative_schedule"
+            android:background="@drawable/rectangle"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:id="@+id/schedule_headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/schedule_title"
+                android:textColor="@color/myblue"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/days_text"
+                android:layout_below="@+id/schedule_headline"
+                android:layout_marginTop="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:text="@string/days_text" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rg_days"
+                android:layout_below="@id/days_text"
+                android:layout_marginTop="5dp">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radiobtn_everyday"
+                    android:layout_below="@+id/days_text"
+                    android:text="@string/every_day_rbtn"
+                    android:textSize="18dp"
+                    android:checked="true"
+                    android:textColor="@android:color/black"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radiobtn_specific_days"
+                    android:layout_below="@+id/radiobtn_everyday"
+                    android:text="@string/specific_days_of_week_rbtn"
+                    android:textSize="18dp"
+                    android:textColor="@android:color/black"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/picked_days_text"
+                android:text="A"
+                android:layout_below="@+id/rg_days"
+                android:layout_marginStart="30dp"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="18dp"
+                android:layout_marginBottom="8dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relative_prescription"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/rectangle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/prescription_headline"
+                android:text="@string/prescription_refill_title"
+                android:textSize="22dp"
+                android:textColor="@color/myblue"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/refill_msg"
+                android:layout_below="@+id/prescription_headline"
+                android:layout_marginTop="8dp"
+                android:text="@string/enter_amount_meds_msg"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"/>
+
+            <EditText
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/amount_meds_edit_text"
+                android:layout_below="@+id/refill_msg"
+                android:layout_marginTop="8dp"
+                android:hint="@string/amount_of_meds_edit_text"
+                android:inputType="number"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/refill_reminder_text"
+                android:layout_below="@+id/amount_meds_edit_text"
+                android:layout_marginTop="8dp"
+                android:text="@string/refill_reminder_text"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/toggle_refill_reminder"
+                android:layout_alignBaseline="@+id/refill_reminder_text"
+                android:layout_alignParentEnd="true"
+                android:checked="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/choose_amount_meds_refill_text"
+                android:layout_below="@+id/refill_reminder_text"
+                android:layout_marginTop="8dp"
+                android:text="@string/amount_meds_remaining"
+                android:textSize="18dp"
+                android:textColor="@android:color/holo_blue_light"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/what_time_refill_text"
+                android:text="@string/what_time_refill_text"
+                android:textColor="@android:color/black"
+                android:textSize="18dp"
+                android:layout_below="@+id/choose_amount_meds_refill_text"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/refill_time_text"
+                android:layout_below="@+id/what_time_refill_text"
+                android:layout_marginTop="8dp"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="18dp"
+                android:text="11:00"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relative_buttons"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/done_btn"
+                android:text="@string/btn_done"
+                android:textSize="15dp"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/montserrat"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/more_options_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/done_btn"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/btn_more_options"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home"
+        android:enabled="true" />
+
+    <item
+        android:id="@+id/navigation_medications"
+        android:icon="@drawable/pill"
+        android:title="@string/medications_nav"
+        android:enabled="true" />
+
+    <item
+        android:id="@+id/navigation_sos"
+        android:title="@string/sos_nav"
+        android:enabled="true"
+        android:icon="@drawable/ic_local_hospital"/>
+
+    <item
+        android:id="@+id/navigation_prescriptions"
+        android:title="@string/prescription_nav"
+        android:icon="@drawable/ic_insert_drive_file"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/navigation_medifriend"
+        android:title="@string/medifriend_nav"
+        android:icon="@drawable/ic_person_add"
+        android:enabled="true"/>
+
+</menu>
