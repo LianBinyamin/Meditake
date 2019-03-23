@@ -70,6 +70,17 @@ public class AlertReceiver extends BroadcastReceiver {
         PendingIntent snoozePendingIntent = PendingIntent.getBroadcast(context, 1, snoozeIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
 
+        Intent ttsIntent = new Intent(context, ActionBtnNotificationReceiver.class);
+        ttsIntent.setAction(ActionBtnNotificationReceiver.TTS_ACTION);
+        ttsIntent.putExtra(NOTIFICATION_KEY, key);   //for cancelling notification
+        ttsIntent.putExtra(MEDICATION_ID, medicationId);
+        ttsIntent.putExtra(DOSES_TAKE, doses);
+        ttsIntent.putExtra(NAME_TAKE, name);
+        ttsIntent.putExtra("mg", mg);
+        ttsIntent.putExtra(REMINDER_ID_KEY, id);
+        PendingIntent ttsPendingIntent = PendingIntent.getBroadcast(context, 1, ttsIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+
 
         NotificationHelper notificationHelper = new NotificationHelper(context);
         NotificationCompat.Builder nb = notificationHelper.getChannelNotification()
@@ -82,7 +93,8 @@ public class AlertReceiver extends BroadcastReceiver {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setColor(Color.BLUE)
                 .addAction(R.drawable.ic_check, context.getResources().getString(R.string.take_action_btn), takePendingIntent)
-                .addAction(R.drawable.ic_alarm, "Snooze", snoozePendingIntent);
+                .addAction(R.drawable.ic_alarm, context.getResources().getString(R.string.snooze_action_btn), snoozePendingIntent)
+                .addAction(R.drawable.ic_volume, context.getResources().getString(R.string.speak_action_btn), ttsPendingIntent);
 
         notificationHelper.getManager().notify(key, nb.build());
 

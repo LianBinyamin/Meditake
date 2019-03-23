@@ -1,6 +1,7 @@
 package com.example.lian.meditake;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class SosFragment extends Fragment {
@@ -31,8 +35,16 @@ public class SosFragment extends Fragment {
         btnSos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mListener != null) {
-                    mListener.onSosButtonClicked();
+                SharedPreferences prefs = getActivity().getSharedPreferences(MainActivity.PREFS_MEDIFRIEND, MODE_PRIVATE);
+                String name = prefs.getString(MainActivity.NAME_MEDIFRIEND_PREFS, null);
+                String phone = prefs.getString(MainActivity.PHONE_MEDIFRIEND_PREFS, null);
+                if (name == null && phone == null) {
+                    Toast.makeText(getContext(), R.string.sos_toast, Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if (mListener != null) {
+                        mListener.onSosButtonClicked();
+                    }
                 }
             }
         });

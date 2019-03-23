@@ -6,14 +6,19 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 public class ActionBtnNotificationReceiver extends BroadcastReceiver {
     public static final String URI_BASE = ActionBtnNotificationReceiver.class.getName() + ".";
     public static final String TAKE_ACTION = URI_BASE + "TAKE_ACTION";
     public static final String SNOOZE_ACTION = URI_BASE + "SNOOZE_ACTION";
+    public static final String TTS_ACTION = URI_BASE + "TTS_ACTION";
+    public static final long SNOOZE = 10 * 60 * 1000;   //snooze 10 minute in future
     Intent intent;
     Context context;
     private String name;
@@ -21,6 +26,7 @@ public class ActionBtnNotificationReceiver extends BroadcastReceiver {
     private double doses;
     private double mg;
     private int reminderId;
+    private TextToSpeech tts;
 
     @Override
     public void onReceive(final Context context, final Intent intent) {
@@ -35,12 +41,12 @@ public class ActionBtnNotificationReceiver extends BroadcastReceiver {
         medicationId = intent.getIntExtra(AlertReceiver.MEDICATION_ID, 0);
         reminderId = intent.getIntExtra(AlertReceiver.REMINDER_ID_KEY, 100);
 
-        dismissNotification();
         stopSms();
 
         String action = intent.getAction();
 
         if (action.equals(TAKE_ACTION)) {
+            dismissNotification();
             Thread t = new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -49,8 +55,41 @@ public class ActionBtnNotificationReceiver extends BroadcastReceiver {
             });
             t.start();
         }
-        else {  //SNOOZE_ACTION
+        else if (action.equals(SNOOZE_ACTION)) {
+            dismissNotification();
             snooze();
+        }
+        else {  //SPEAK_ACTION
+            final String msg = context.getResources().getString(R.string.notification_msg, doses, name);
+            tts = new TextToSpeech(context.getApplicationContext(), new TextToSpeech.OnInitListener() {
+                @Override
+                public void onInit(int status) {
+                    if (status == TextToSpeech.SUCCESS) {
+                        int ttsLang = tts.setLanguage(Locale.US);
+
+                        if (ttsLang == TextToSpeech.LANG_MISSING_DATA
+                                || ttsLang == TextToSpeech.LANG_NOT_SUPPORTED) {
+                            Log.e("TTS", "The Language is not supported!");
+                        } else {
+                            Log.i("TTS", "Language Supported.");
+                        }
+                        Log.i("TTS", "Initialization success.");
+                    } else {
+                        Toast.makeText(context, "TTS Initialization failed!", Toast.LENGTH_SHORT).show();
+                    }
+                    speakNow(msg);
+                }
+            });
+        }
+
+    }
+
+    public void speakNow(String msg) {
+        Log.i("TTS", "action button clicked: " + msg);
+        int speechStatus = tts.speak(msg, TextToSpeech.QUEUE_FLUSH, null, null);
+
+        if (speechStatus == TextToSpeech.ERROR) {
+            Log.e("TTS", "Error in converting Text to Speech!");
         }
     }
 
@@ -120,7 +159,6 @@ public class ActionBtnNotificationReceiver extends BroadcastReceiver {
     }
 
     public void snooze() {
-        //TODO: don't forget change snooze to 10 minutes!!
         Log.d("TAKE BTN RECEIVER", "%%%%% snooze %%%%%");
 
         Intent snoozeIntent = new Intent(context, AlertReceiver.class);
@@ -135,8 +173,7 @@ public class ActionBtnNotificationReceiver extends BroadcastReceiver {
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
-                SystemClock.elapsedRealtime() +
-                        10 * 60 * 1000, pendingIntentSnooze);    //snooze 10 minute in future
+                SystemClock.elapsedRealtime() + SNOOZE, pendingIntentSnooze);
 
     }
 }

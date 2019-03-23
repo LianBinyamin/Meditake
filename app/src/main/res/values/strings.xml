@@ -129,4 +129,7 @@
     <string name="pick_reminder_time">Pick reminder time:</string>
     <string name="acamol">Acamol</string>
     <string name="prescriptions_msg">No prescription reminders</string>
+    <string name="sos_toast">You don\'t have medifriend yet</string>
+    <string name="snooze_action_btn">Snooze</string>
+    <string name="speak_action_btn">Speak</string>
 </resources>
