@@ -34,6 +34,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/days"
+            android:layout_below="@+id/mg_recycler"
+            android:layout_alignStart="@+id/mg_recycler"
+            android:text=""
+            android:textColor="@android:color/holo_blue_bright"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/mg_recycler"
             android:layout_below="@+id/name_recycler_med"
             android:layout_alignStart="@+id/name_recycler_med"

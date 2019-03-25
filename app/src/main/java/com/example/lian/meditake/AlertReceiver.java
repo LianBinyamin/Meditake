@@ -113,7 +113,7 @@ public class AlertReceiver extends BroadcastReceiver {
 
             alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
                     SystemClock.elapsedRealtime() +
-                            60 * 1000, pendingIntent);  //alarm to 1 minute in future
+                            60 * 60 * 1000, pendingIntent);  //alarm to 1 hour in future
 
         }
     }

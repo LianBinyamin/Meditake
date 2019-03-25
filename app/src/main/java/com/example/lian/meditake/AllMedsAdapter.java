@@ -40,6 +40,7 @@ public class AllMedsAdapter extends RecyclerView.Adapter<AllMedsAdapter.AllMedsH
                 .getString(R.string.mg_text_recycler, currentMed.getMg()));
         allMedsHolder.remindersTextView.setText(allMedsHolder.remindersTextView.getResources()
                 .getString(R.string.reminders_text_recycler, currentMed.getAmountRemindersPerDay()));
+        allMedsHolder.days.setText(currentMed.getDays());
         allMedsHolder.btnRemove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +60,7 @@ public class AllMedsAdapter extends RecyclerView.Adapter<AllMedsAdapter.AllMedsH
         private TextView nameTextView;
         private TextView mgTextView;
         private TextView remindersTextView;
+        private TextView days;
         private Button btnRemove;
 
         public AllMedsHolder(@NonNull View itemView) {
@@ -66,6 +68,7 @@ public class AllMedsAdapter extends RecyclerView.Adapter<AllMedsAdapter.AllMedsH
             nameTextView = (TextView) itemView.findViewById(R.id.name_recycler_med);
             mgTextView = (TextView) itemView.findViewById(R.id.mg_recycler);
             remindersTextView = (TextView) itemView.findViewById(R.id.reminders_recycler);
+            days = (TextView) itemView.findViewById(R.id.days);
             btnRemove = (Button) itemView.findViewById(R.id.btn_remove_med_recycler);
         }
     }

@@ -9,7 +9,7 @@ import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
 @Database(entities = {MedicationsTable.class, RemindersTable.class, PrescriptionReminder.class,
-            AllMedicationsTable.class}, version = 24)
+            AllMedicationsTable.class}, version = 25)
 public abstract class MedicationsDataBase extends RoomDatabase {
 
     private static MedicationsDataBase instance;

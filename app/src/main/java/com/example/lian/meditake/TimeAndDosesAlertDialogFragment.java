@@ -79,7 +79,6 @@ public class TimeAndDosesAlertDialogFragment extends DialogFragment {
                     }
                 });
 
-        //timePicker = (TimePicker)view.findViewById(R.id.time_picker);
         minus = (Button)view.findViewById(R.id.minus_btn_doses);
         plus = (Button)view.findViewById(R.id.plus_btn_doses);
         dosesEditText = (EditText)view.findViewById(R.id.edit_amount_dose);

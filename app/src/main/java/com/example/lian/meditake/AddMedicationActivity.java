@@ -787,10 +787,10 @@ public class AddMedicationActivity extends AppCompatActivity implements AdapterV
             Calendar calendar = Calendar.getInstance();
             calendar.setTimeInMillis(System.currentTimeMillis());
             Calendar setcalendar = Calendar.getInstance();
+            calendar.set(Calendar.DAY_OF_WEEK, getDayOfWeekInt(medWreminders.get(i).reminder.getDay()));
             calendar.set(Calendar.HOUR_OF_DAY, medWreminders.get(i).reminder.getHour());
             calendar.set(Calendar.MINUTE, medWreminders.get(i).reminder.getMinutes());
             calendar.set(Calendar.SECOND, 0);
-            calendar.set(Calendar.DAY_OF_WEEK, getDayOfWeekInt(medWreminders.get(i).reminder.getDay()));
 
             // cancel already scheduled reminders
             notificationHelper.cancelNotification(this, medWreminders.get(i).reminder.getId());
@@ -816,7 +816,10 @@ public class AddMedicationActivity extends AppCompatActivity implements AdapterV
             PendingIntent pendingIntent = PendingIntent.getBroadcast(this,
                     medWreminders.get(i).reminder.getId(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+//            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+//                    AlarmManager.INTERVAL_DAY * 7, pendingIntent);
+
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
                     AlarmManager.INTERVAL_DAY * 7, pendingIntent);
 
         }
@@ -889,8 +892,22 @@ public class AddMedicationActivity extends AppCompatActivity implements AdapterV
 
                 int medId = db.medicationsDao().getMedicationIdByName(medName);
 
+                String days = "";
+                if (selectedDaysSet.size() == 7) {
+                    days = "everyday";
+                }
+                else {
+                    for (int i = 0; i < selectedDaysSet.size(); i++) {
+                        days = days + selectedDaysSet.get(i).substring(0, 3);
+                        if (i < selectedDaysSet.size()-1) {
+                            days += ", ";
+                        }
+                    }
+                }
+
                 //insert data to medications table
-                MedicationsTable medication = new MedicationsTable(medId, medName, amountDosageMg, remindersAmountPerDay);
+                MedicationsTable medication = new MedicationsTable(medId, medName, amountDosageMg,
+                        remindersAmountPerDay, days);
                 db.medicationsDao().insert(medication);
 
                 //insert data to reminders table

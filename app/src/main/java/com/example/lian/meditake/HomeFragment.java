@@ -12,8 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
@@ -26,6 +29,7 @@ public class HomeFragment extends Fragment {
     private FloatingActionButton btnAddMedication;
     private OnHomeFragmentInteractionListener listener;
     private TextView textView;
+    private TextView date;
 
     public HomeFragment() {
     }
@@ -35,6 +39,9 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        date = (TextView)view.findViewById(R.id.date);
+        date.setText(getTodayDate());
 
         Thread t = new Thread(new Runnable() {
             @Override
@@ -96,6 +103,12 @@ public class HomeFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         listener = null;
+    }
+
+    public String getTodayDate() {
+        Date date = Calendar.getInstance().getTime();
+        DateFormat formatter = new SimpleDateFormat("dd/MM");
+        return formatter.format(date);
     }
 
     public static String getDay() {

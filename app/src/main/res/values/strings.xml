@@ -41,12 +41,12 @@
         <item>058</item>
     </string-array>
 
-    <string name="cancel">CANCEL</string>
+    <string name="cancel">Cancel</string>
     <string name="set">Set</string>
     <string name="submit">Submit</string>
     <string name="take_dose">Take %.2f</string>
     <string name="take_dose_int">Take %d</string>
-    <string name="set_time_dose_title_dialog">Set Quantity</string>
+    <string name="set_time_dose_title_dialog">Set Time and Quantity</string>
     <string name="number_doses_edit_text">%.2f</string>
     <string name="set_dose_message">Set quantity (number of doses) to be taken at the time you chose</string>
     <string name="dosage_amount_edit_text">%.2f</string>
@@ -83,7 +83,7 @@
     <string name="exit_dialog_msg">Are you sure you want to exit?\nChanges won\'t be saved.</string>
     <string name="doses_text_recycler">%.2f dose(s)</string>
     <string name="mg_text_recycler">%.2f mg</string>
-    <string name="reminders_text_recycler">%d reminder(s)</string>
+    <string name="reminders_text_recycler">%d time(s) a day</string>
     <string name="delete_title">Delete Medication</string>
     <string name="delete_dialog_msg">Are you sure you want to delete medication and its reminders?</string>
     <string name="name_medifriend">%s</string>
@@ -109,7 +109,7 @@
     <string name="take_action_btn">Take</string>
     <string name="fill_all_details_toast">Please Fill In All Details</string>
     <string name="emergency_msg">For emergency, press this button. It will call your medifriend</string>
-    <string name="sos_nav">SOS</string>
+    <string name="sos_nav">sos</string>
     <string name="prescription_nav">Pres</string>
     <string name="medications_nav">Meds</string>
     <string name="sms_body">This is a message from Meditake App.\nYou should check that everything is ok!</string>

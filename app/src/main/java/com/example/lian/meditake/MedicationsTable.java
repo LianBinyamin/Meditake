@@ -14,12 +14,14 @@ public class MedicationsTable {
     private String medName;
     private double mg;
     private int amountRemindersPerDay;
+    private String days;
 
-    public MedicationsTable(int id, String medName, double mg, int amountRemindersPerDay) {
+    public MedicationsTable(int id, String medName, double mg, int amountRemindersPerDay, String days) {
         this.id = id;
         this.medName = medName;
         this.mg = mg;
         this.amountRemindersPerDay = amountRemindersPerDay;
+        this.days = days;
     }
 
     public int getId() {
@@ -48,5 +50,13 @@ public class MedicationsTable {
 
     public void setPrescription(boolean prescription) {
         isPrescription = prescription;
+    }
+
+    public String getDays() {
+        return days;
+    }
+
+    public void setDays(String days) {
+        this.days = days;
     }
 }
