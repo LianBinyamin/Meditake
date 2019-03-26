@@ -816,9 +816,6 @@ public class AddMedicationActivity extends AppCompatActivity implements AdapterV
             PendingIntent pendingIntent = PendingIntent.getBroadcast(this,
                     medWreminders.get(i).reminder.getId(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-//            alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-//                    AlarmManager.INTERVAL_DAY * 7, pendingIntent);
-
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
                     AlarmManager.INTERVAL_DAY * 7, pendingIntent);
 

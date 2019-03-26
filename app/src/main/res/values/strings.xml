@@ -113,7 +113,7 @@
     <string name="prescription_nav">Pres</string>
     <string name="medications_nav">Meds</string>
     <string name="sms_body">This is a message from Meditake App.\nYou should check that everything is ok!</string>
-    <string name="today_reminders_msg">No reminders for today! click the \"+\" button to add medications</string>
+    <string name="today_reminders_msg">No reminders for today!\nClick the \"+\" button to add medications</string>
     <string name="home_fragment_title">Today\'s Medications:</string>
     <string name="medication_name">Medication Name</string>
     <string name="type_brand_name_hint">type brand name</string>
@@ -124,7 +124,7 @@
     <string name="medifriend_name_hint">Name</string>
     <string name="dad">DAD</string>
     <string name="your_medications_title">Your Medications:</string>
-    <string name="all_medications_msg">You Don\'t have medications yet.\nClick the \"+\" button to add medications</string>
+    <string name="all_medications_msg">You don\'t have medications yet.\nClick the \"+\" button to add medications</string>
     <string name="prescriptions_fragment_title">Refill Prescriptions:</string>
     <string name="pick_reminder_time">Pick reminder time:</string>
     <string name="acamol">Acamol</string>
